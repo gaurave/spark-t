@@ -21,8 +21,8 @@ body {
 }
 
 body > header {
-  padding-top: 22px;
-  margin-bottom: -5px;
+  padding-tasdop: 22px;
+  marddgin-bottom: -5px;
 }
 
 h1 {
