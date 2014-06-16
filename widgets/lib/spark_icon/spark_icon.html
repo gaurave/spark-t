@@ -6,36 +6,33 @@
 
 <!--
 /**
- * See g-icon https://github.com/Polymer/toolkit-ui/tree/master/elements.
- *
- * spark-icon is a 24x24 glyph expressed as a background-image.
+ * spark-icon is a square-shaped glyph expressed as a background-image.
  *
  * Example:
  *
  *     <spark-icon src="star.png"></spark-icon>
- *
- * Optionally can use other size like 32x32 by setting the attribute "size" to "32":
- *
- *     <spark-icon src="big_star.png" size="32"></spark-icon>
  */
 -->
 
 <link rel="import" href="../../../packages/spark_widgets/common/spark_widget.html"/>
 
 <polymer-element name="spark-icon" extends="spark-widget"
-    attributes="src tooltip size">
+    attributes="src
+                tooltip
+                size">
   <template>
-    <!-- BUG: https://code.google.com/p/dart/issues/detail?id=14382 -->
-    <!-- link rel="stylesheet" href="xyz.css" -->
+    <link rel="stylesheet" href="spark_icon.css">
+
     <style>
-      @import url("packages/spark_widgets/spark_icon/spark_icon.css");
+      #icon {
+        background-image: url({{src}});
+        width: {{size}};
+        height: {{size}};
+      }
     </style>
 
-    <div id="icon"
-        style="background-image:url({{src}}); width:{{size}}px; height:{{size}}px"
-        title="{{tooltip}}">
-    </div>
+    <div id="icon" title?="{{tooltip}}"></div>
   </template>
 
-  <script type="application/dart" src="spark_icon.dart"></script>
+  <script type="application/dart;component=1" src="spark_icon.dart"></script>
 </polymer-element>

@@ -6,9 +6,8 @@
 
 <!--
 /**
- * See g-menu-item https://github.com/Polymer/toolkit-ui/tree/master/elements.
- *
- * spark-menu-item is intended for use in a spark-menu.
+ * spark-menu-item is intended to be used as a selectable element of a
+ * spark-menu and its derivatives (e.g. spark-menu-button).
  */
 -->
 
@@ -16,21 +15,22 @@
 <link rel="import" href="../../../packages/spark_widgets/spark_icon/spark_icon.html">
 
 <polymer-element name="spark-menu-item" extends="spark-widget"
-    attributes="src label iconsize">
+    attributes="icon
+                iconSize
+                label
+                description">
   <template>
-    <!-- BUG: https://code.google.com/p/dart/issues/detail?id=14382 -->
-    <!-- link rel="stylesheet" href="xyz.css" -->
-    <style>
-      @import url("packages/spark_widgets/spark_menu_item/spark_menu_item.css");
-    </style>
+    <link rel="stylesheet" href="spark_menu_item.css">
 
-    <spark-icon src="{{src}}" size="{{iconsize}}"></spark-icon>
-
-    <div class="labelText">
-      <span>{{label}}</span>
+    <span id="main">
+      <template if="{{icon.isNotEmpty}}">
+        <spark-icon id="icon" src="{{icon}}" size="{{iconSize}}"></spark-icon>
+      </template>
+      <span id="label">{{label}}</span>
       <content></content>
-    </div>
+    </span>
+    <span id="description">{{description}}</span>
   </template>
 
-  <script type="application/dart" src="spark_menu_item.dart"></script>
+  <script type="application/dart;component=1" src="spark_menu_item.dart"></script>
 </polymer-element>

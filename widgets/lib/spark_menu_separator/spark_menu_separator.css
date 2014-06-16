@@ -3,3 +3,11 @@
 /* license that can be found in the LICENSE file. */
 
 @import url("../common/spark_widget.css");
+
+:host {
+  display: block;
+  height: 1px;
+  margin: 0 10px;
+  background-color: #ddd;
+  cursor: default;
+}

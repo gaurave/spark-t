@@ -6,9 +6,8 @@
 
 <!--
 /**
- * See g-menu-item https://github.com/Polymer/toolkit-ui/tree/master/elements.
- *
- * spark-menu-separator is intended for use in a spark-menu.
+ * spark-menu-separator is intended to be used as an unselectable visual
+ * separator in a spark-menu and its derivatives (e.g. spark-menu-button).
  */
 -->
 
@@ -16,12 +15,8 @@
 
 <polymer-element name="spark-menu-separator" extends="spark-widget">
   <template>
-    <!-- BUG: https://code.google.com/p/dart/issues/detail?id=14382 -->
-    <!-- link rel="stylesheet" href="xyz.css" -->
-    <style>
-      @import url("packages/spark_widgets/spark_menu_separator/spark_menu_separator.css");
-    </style>
+    <link rel="stylesheet" href="spark_menu_separator.css">
   </template>
 
-  <script type="application/dart" src="spark_menu_separator.dart"></script>
+  <script type="application/dart;component=1" src="spark_menu_separator.dart"></script>
 </polymer-element>

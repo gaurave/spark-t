@@ -6,8 +6,6 @@
 
 <!--
 /**
- * See g-togglebutton https://github.com/Polymer/toolkit-ui/tree/master/elements
- *
  * spark-toggle-button is a button that has one of two states (ON/OFF).
  * You can tap or drag the button to switch state.
  *
@@ -15,34 +13,21 @@
  *
  *     <spark-toggle-button value="true"></spark-toggle-button>
  */
-
- // TODO(terry): Remove the on-click when touch is working shouldn't be needed.
 -->
 
 <link rel="import" href="../../../packages/spark_widgets/common/spark_widget.html"/>
 
 <polymer-element name="spark-toggle-button" extends="spark-widget"
-    attributes="value"
-    on-click="{{toggle}}"
-    on-tap="{{toggle}}"
-    on-trackstart="{{trackStart}}"
-    on-track="{{track}}"
-    on-trackend="{{trackEnd}}"
-    on-flick="{{flick}}">
-
+    attributes="value">
   <template>
-    <!-- BUG: https://code.google.com/p/dart/issues/detail?id=14382 -->
-    <!-- link rel="stylesheet" href="xyz.css" -->
-    <style>
-      @import url("packages/spark_widgets/spark_toggle_button/spark_toggle_button.css");
-    </style>
+    <link rel="stylesheet" href="spark_toggle_button.css">
 
-    <div id="toggle" class="toggle">
-      <span class="on-label">ON</span>
-      <span id="thumb" class="thumb"></span>
-      <span class="off-label">OFF</span>
+    <div id="toggle">
+      <span id="onLabel">ON</span>
+      <span id="thumb"></span>
+      <span id="offLabel">OFF</span>
     </div>
   </template>
 
-  <script type="application/dart" src="spark_toggle_button.dart"></script>
+  <script type="application/dart;component=1" src="spark_toggle_button.dart"></script>
 </polymer-element>
